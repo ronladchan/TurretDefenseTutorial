@@ -48,7 +48,8 @@ public class EzWaveSpawner : MonoBehaviour
     }
     
     void SpawnGreenEnemy(){
-        Instantiate(greenEnemy, spawnPoint.position, spawnPoint.rotation);
+        Transform greenEnemyClone = Instantiate(greenEnemy, spawnPoint.position, spawnPoint.rotation);
+        greenEnemyClone = greenEnemy;
     }
 
     void SpawnYellowEnemy(int i){

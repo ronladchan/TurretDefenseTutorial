@@ -1,5 +1,5 @@
 // using UnityEngine;
-// using System.Collections;
+// using System.Collections.Generic;
 
 // public class WaveSpawner : MonoBehaviour
 // {   
@@ -17,8 +17,8 @@
 //     // Need a notion of a round to pass a variable number to generate wave creation
 //     private float round = 0;
 
-//     // List to store the enemies for the round
-//     // static public List<GameObject> waveList;
+//     List to store the enemies for the round
+//     static public List<GameObject> waveList;
 
 
 //     void Start(){
@@ -31,7 +31,6 @@
 //         float numYellowEnemies = round * 2f;
 //         float numBlueEnemies = round * 1f;
 
-//         // Idk coroutines yet so it should first spawn all green enemies, then yellow, then blue
 //         if(numGreenEnemies != 0){
 //             waveList.Add(greenEnemyPrefab);
 //             numGreenEnemies -= 1;
@@ -86,18 +85,18 @@
 
 // }
 
-// // // System.Serializable allows you to configure all of the properties below
-// //     // in the Inspector like a public variable
-// //     [System.Serializable]
-// //     public class Wave {
+// // System.Serializable allows you to configure all of the properties below
+//     // in the Inspector like a public variable
+//     [System.Serializable]
+//     public class Wave {
 
-// //         public string name;
-// //         public Transform greenEnemy;
-// //         public Transform yellowEnemy;
-// //         public Transform blueEnemy;
-// //         public int count;
-// //         public float rate;
+//         public string name;
+//         public Transform greenEnemy;
+//         public Transform yellowEnemy;
+//         public Transform blueEnemy;
+//         public int count;
+//         public float rate;
 
-// //     }
+//     }
 
-// //     private static List<GameObject> waveList = new List<GameObject>();
+//     private static List<GameObject> waveList = new List<GameObject>();
