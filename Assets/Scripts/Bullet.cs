@@ -41,8 +41,9 @@ public class Bullet : MonoBehaviour
 
     void HitTarget(){
         GameObject VFXinst = (GameObject)Instantiate(bulletImpactVFX, transform.position, transform.rotation);
-        Destroy(VFXinst);
+        Destroy(VFXinst, 2f);
 
+        Destroy(target.gameObject);
         Destroy(gameObject);
     }
 }
