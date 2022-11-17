@@ -30,7 +30,7 @@ public class Enemy : MonoBehaviour
     void GetNextWaypoint(){
         if (waypointsIndex >= Waypoints.points.Length - 1){
             Destroy(gameObject);
-            Debug.Log("You Lose");
+            // Debug.Log("You Lose");
             return;
         }
 
