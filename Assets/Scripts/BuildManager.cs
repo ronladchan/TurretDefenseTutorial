@@ -5,6 +5,8 @@ using UnityEngine;
 public class BuildManager : MonoBehaviour
 {
     private GameObject turretToBuild;
+    public GameObject standardTurretPrefab;
+    public GameObject panelTurretPrefab;
 
     // Singleton pattern. A single build manager that can be easily referenced
     public static BuildManager instance;
@@ -18,13 +20,11 @@ public class BuildManager : MonoBehaviour
         instance = this;
     }
 
-    public GameObject standardTurretPrefab;
-
-    void Start(){
-        turretToBuild = standardTurretPrefab;
-    }
-
     public GameObject GetTurretToBuild(){
         return turretToBuild;
+    }
+
+    public void SetTurretToBuild(GameObject turret){
+        turretToBuild = turret;
     }
 }

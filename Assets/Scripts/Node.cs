@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Node : MonoBehaviour
 {
+    BuildManager buildManager;
+
     public Color hoverColor;
     public Vector3 positionOffset;
     
@@ -15,10 +17,15 @@ public class Node : MonoBehaviour
     void Start(){
         rend = GetComponent<Renderer>();
         startColor = rend.material.color;
+        buildManager = BuildManager.instance;
     }
 
     // Calls once when mouse overlaps with the collider
     void OnMouseEnter(){
+        if(buildManager.GetTurretToBuild() == null){
+            return;
+        }
+        
         // Want to change color on hover
         rend.material.color = hoverColor;
     }
@@ -28,12 +35,13 @@ public class Node : MonoBehaviour
     }
 
     void OnMouseDown(){
+
         if(turret != null){
             Debug.Log("Can't build there");
             return;
         }
 
-        GameObject turretToBuild = BuildManager.instance.GetTurretToBuild();
+        GameObject turretToBuild = buildManager.GetTurretToBuild();
         turret = (GameObject)Instantiate(turretToBuild, transform.position + positionOffset, transform.rotation);
     }
 }
